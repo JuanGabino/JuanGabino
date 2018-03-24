@@ -12,7 +12,6 @@ import com.journey.model.vehiculo;
 public class vehiculoController {
 
 	@GetMapping("/new")
-
 	public String initCreationForm(Model model) {
 		model.addAttribute("vehiculo", new vehiculo());
 		return "journeyForm";		
@@ -21,7 +20,7 @@ public class vehiculoController {
 	@PostMapping("/new")	
 	public String submitForm(@ModelAttribute vehiculo vehiculo) {
 		
-		switch(vehiculo.getVehiculo()){
+		switch(vehiculo.getMarca()){
 			
 			case "marca1": vehiculo.setResultado(vehiculo.getRecorrido()/40);
 			break;
@@ -33,7 +32,7 @@ public class vehiculoController {
 			break;
 		}
 		
-	return "resultFrom";
+	return "resultForm";
 	}
 
 }

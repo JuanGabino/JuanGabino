@@ -2,48 +2,33 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Jornada</title>
 </head>
 <body>
 
-<form action="#" th:action="@{/new}" th:object="${journey}" method="post">
-	<table>
-		
-		<tr>
-			<td>Nombre:</td>
-			<td><input type="text" th:field="*{nombre}"/></td>
-			
-		</tr>
-		
-		<tr>
-			<td>Recorrido:</td>
-			<td><input type="text" th:field="*{recorrido}"/></td>
-			
-		</tr>
+	<form action="#" th:action="@{/new}" th:object="${vehiculo}"
+		method="post">
 
-		<tr>
-			<td>Vehiculo:</td>
-			<select name="vehiculo">
-                     <option value="marca1">Marca 1</option>
-                     <option value="marca2">Marca 2</option>
-                     <option value="marca3">Marca 3</option>
-                     <option th:each="type : ${vehiculo}" 
-                     th:value="${type.getVehiculo()}"></option>
-                   </select>
-                   
-			<!--  <td><input type="text" th:field="*{vehiculo}"/></td>-->
-			
-		</tr>
-		
-		<tr>
-			<td></td>
-			<td><input type="submit" value="evaluar"/>
-				<input type="reset" value="cancelar"/></td>
-			<td></td>
-		</tr>
-	</table>
+		<p>
+			Nombre:<input type="text" th:field="*{nombre}" />
+		</p>
+		<p>
+			Recorrido:<input type="number" th:field="*{recorrido}" />
+		</p>
+		<p>
+			Vehiculo: <select th:field="*{marca}">
+				<option th:value="marca1">Marca 1</option>
+				<option th:value="marca2">Marca 2</option>
+				<option th:value="marca3">Marca 3</option>
+			</select>
+		</p>
+
+		<p>
+			<input type="submit" value="evaluar" /> <input type="reset"
+				value="cancelar" />
+		</p>
 
 
-</form>
+	</form>
 </body>
 </html>

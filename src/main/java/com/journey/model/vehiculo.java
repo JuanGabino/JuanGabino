@@ -4,7 +4,7 @@ public class vehiculo {
 
 	private String nombre;
 	private Double recorrido;
-	private String vehiculo;
+	private String marca;
 	private Double resultado;
 	
 	public Double getResultado() {
@@ -25,12 +25,13 @@ public class vehiculo {
 	public void setRecorrido(Double recorrido) {
 		this.recorrido = recorrido;
 	}
-	public String getVehiculo() {
-		return vehiculo;
+	public String getMarca() {
+		return marca;
 	}
-	public void setVehiculo(String vehiculo) {
-		this.vehiculo = vehiculo;
+	public void setMarca(String marca) {
+		this.marca = marca;
 	}
+
 	
 	
 }
