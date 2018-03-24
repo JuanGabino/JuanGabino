@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/new}" th:object="${journey}" method="post">
+	<table>
+		
+		<tr>
+			<td>Nombre:</td>
+			<td><input type="text" th:field="*{nombre}"/></td>
+			
+		</tr>
+		
+		<tr>
+			<td>Recorrido:</td>
+			<td><input type="text" th:field="*{recorrido}"/></td>
+			
+		</tr>
+
+		<tr>
+			<td>Vehiculo:</td>
+			<select name="vehiculo">
+                     <option value="marca1">Marca 1</option>
+                     <option value="marca2">Marca 2</option>
+                     <option value="marca3">Marca 3</option>
+                     <option th:each="type : ${vehiculo}" 
+                     th:value="${type.getVehiculo()}"></option>
+                   </select>
+                   
+			<!--  <td><input type="text" th:field="*{vehiculo}"/></td>-->
+			
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td><input type="submit" value="evaluar"/>
+				<input type="reset" value="cancelar"/></td>
+			<td></td>
+		</tr>
+	</table>
+
+
+</form>
+</body>
+</html>
